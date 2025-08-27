@@ -48,7 +48,7 @@
 
     <!-- Seção Hero -->
     <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-bg-new"></div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Qual o tamanho do seu sonho?</h1>
@@ -88,11 +88,19 @@
     <section class="about" id="sobre">
         <div class="container">
             <div class="about-content">
-                <h2 class="section-title">Sobre a LP BANK</h2>
-                <p class="about-text">
-                    A LP BANK atua desde 2018, ajudando brasileiros a conquistarem crédito com as melhores taxas do mercado. 
-                    Nossa missão é simplificar o acesso ao crédito com agilidade e segurança.
-                </p>
+                <div class="about-text-section">
+                    <h2 class="section-title">Sobre a LP BANK</h2>
+                    <p class="about-text">
+                        A LP BANK atua desde 2018, ajudando brasileiros a conquistarem crédito com as melhores taxas do mercado. 
+                        Nossa missão é simplificar o acesso ao crédito com agilidade e segurança.
+                    </p>
+                </div>
+                <div class="about-image-section">
+                    <img src="assets/images/lp-bank2.jpg" alt="Equipe LP BANK" class="about-team-image">
+                    <div class="about-image-overlay">
+                        <p class="about-image-caption">Nossa equipe dedicada ao seu sucesso</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -187,40 +195,154 @@
         </div>
     </section>
 
-    <!-- Depoimentos -->
-    <section class="testimonials" id="depoimentos">
+    <!-- Seção de Liderança -->
+    <section class="leadership">
+        <div class="container">
+            <div class="leadership-content">
+                <div class="leadership-image">
+                    <img src="assets/images/lp-bank3.jpg" alt="Leonardo Henrique - CEO LP BANK" class="ceo-image">
+                </div>
+                <div class="leadership-text">
+                    <h2 class="leadership-title">Liderança com Experiência</h2>
+                    <h3 class="ceo-name">Leonardo Henrique</h3>
+                    <p class="ceo-role">CEO & Fundador</p>
+                    <p class="leadership-description">
+                        "Nossa missão é democratizar o acesso ao crédito no Brasil. Com mais de 6 anos de experiência no mercado financeiro, 
+                        construímos a LP BANK para ser mais que uma empresa de empréstimos - somos parceiros na realização dos seus sonhos."
+                    </p>
+                    <div class="leadership-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Anos de experiência</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Clientes atendidos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações do Google -->
+    <section class="google-reviews" id="depoimentos">
         <div class="container">
             <h2 class="section-title">O que nossos clientes dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Consegui meu empréstimo consignado em menos de 24 horas. Processo super fácil e taxas excelentes!"</p>
-                        <div class="testimonial-author">
-                            <strong>Maria Silva</strong>
-                            <span>Aposentada</span>
+            <div class="reviews-header">
+                <div class="google-rating">
+                    <div class="rating-score">
+                        <span class="score">4.9</span>
+                        <div class="stars">
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
                         </div>
+                    </div>
+                    <p class="rating-text">Baseado em mais de 2.000 avaliações no Google</p>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+            </div>
+            
+            <div class="reviews-carousel">
+                <div class="reviews-container" id="reviewsContainer">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">K</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">Karol Constancio</h4>
+                                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <span class="review-time">1 mês atrás</span>
+                        </div>
+                        <p class="review-text">"Ótimo atendimento da Natália novas, questão resolvida rapidamente e depósito feito no mesmo dia em menos de 2 hrs ❤️"</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">C</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">Cibely Castro</h4>
+                                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <span class="review-time">2 meses atrás</span>
+                        </div>
+                        <p class="review-text">"Atendimento maravilhoso, atendente Luana super atenciosa 😍 😍 😍 voltarei mais vezes"</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">M</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">Maria Santos</h4>
+                                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <span class="review-time">3 semanas atrás</span>
+                        </div>
+                        <p class="review-text">"Consegui meu empréstimo consignado rapidamente. Processo muito fácil e sem burocracia. Recomendo!"</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">J</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">João Silva</h4>
+                                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <span class="review-time">1 semana atrás</span>
+                        </div>
+                        <p class="review-text">"Excelente atendimento! A equipe é muito profissional e me ajudou com a antecipação do FGTS. Nota 10!"</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">A</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">Ana Costa</h4>
+                                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <span class="review-time">2 semanas atrás</span>
+                        </div>
+                        <p class="review-text">"LP BANK superou minhas expectativas. Taxas justas e atendimento humanizado. Muito satisfeita!"</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">R</div>
+                                <div class="reviewer-details">
+                                    <h4 class="reviewer-name">Roberto Lima</h4>
+                                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <span class="review-time">1 mês atrás</span>
+                        </div>
+                        <p class="review-text">"Processo rápido e seguro. Em menos de 24 horas meu crédito foi liberado. Empresa séria e confiável."</p>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"A LP BANK me ajudou a antecipar meu FGTS quando mais precisava. Atendimento nota 10!"</p>
-                        <div class="testimonial-author">
-                            <strong>João Santos</strong>
-                            <span>Servidor Público</span>
-                        </div>
-                    </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" id="prevBtn">‹</button>
+                    <button class="carousel-btn next-btn" id="nextBtn">›</button>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Realizei meu sonho da casa própria com o empréstimo pessoal da LP BANK. Recomendo!"</p>
-                        <div class="testimonial-author">
-                            <strong>Ana Costa</strong>
-                            <span>Empresária</span>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="reviews-cta">
+                <a href="https://www.google.com/search?q=LP+BANK+Santa+Isabel+SP+avalia%C3%A7%C3%B5es" target="_blank" class="btn btn-outline">
+                    Ver mais avaliações no Google
+                </a>
             </div>
         </div>
     </section>

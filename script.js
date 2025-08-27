@@ -238,3 +238,121 @@ const debouncedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', debouncedScrollHandler);
 
+// Carrossel de Avaliações
+function initReviewsCarousel() {
+    const container = document.getElementById('reviewsContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (!container || !prevBtn || !nextBtn) return;
+    
+    const cards = container.querySelectorAll('.review-card');
+    const cardWidth = 350 + 32; // largura do card + gap
+    let currentIndex = 0;
+    let maxIndex = Math.max(0, cards.length - Math.floor(container.parentElement.offsetWidth / cardWidth));
+    
+    function updateCarousel() {
+        const translateX = -currentIndex * cardWidth;
+        container.style.transform = `translateX(${translateX}px)`;
+        
+        // Atualizar estado dos botões
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+    
+    function goToNext() {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    }
+    
+    function goToPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', goToNext);
+    prevBtn.addEventListener('click', goToPrev);
+    
+    // Auto-scroll (opcional)
+    let autoScrollInterval;
+    
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateCarousel();
+        }, 5000); // 5 segundos
+    }
+    
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+    
+    // Iniciar auto-scroll
+    startAutoScroll();
+    
+    // Pausar auto-scroll quando hover
+    container.parentElement.addEventListener('mouseenter', stopAutoScroll);
+    container.parentElement.addEventListener('mouseleave', startAutoScroll);
+    
+    // Recalcular no resize
+    window.addEventListener('resize', () => {
+        maxIndex = Math.max(0, cards.length - Math.floor(container.parentElement.offsetWidth / cardWidth));
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        updateCarousel();
+    });
+    
+    // Suporte para touch/swipe em dispositivos móveis
+    let startX = 0;
+    let isDragging = false;
+    
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        stopAutoScroll();
+    });
+    
+    container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    container.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        if (Math.abs(diffX) > 50) { // Threshold para swipe
+            if (diffX > 0) {
+                goToNext();
+            } else {
+                goToPrev();
+            }
+        }
+        
+        isDragging = false;
+        startAutoScroll();
+    });
+    
+    // Inicializar
+    updateCarousel();
+}
+
+// Inicializar carrossel quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', initReviewsCarousel);
+
+// Observar cards de avaliação para animação
+const reviewCards = document.querySelectorAll('.review-card');
+reviewCards.forEach(card => observer.observe(card));
+
