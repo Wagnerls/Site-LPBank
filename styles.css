@@ -458,6 +458,19 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
+.service-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.service-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    justify-content: center;
+}
+
 /* Differentials Section */
 .differentials {
     padding: 5rem 0;
@@ -1152,6 +1165,17 @@ h1, h2, h3, h4, h5, h6 {
     
     .score {
         font-size: 2.5rem;
+    }
+    
+    /* Service Buttons Small Mobile */
+    .service-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .service-buttons .btn {
+        min-width: auto;
+        width: 100%;
     }
     
     .differential-item {
