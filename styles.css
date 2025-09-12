@@ -513,9 +513,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .differential-icon img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) saturate(100%) invert(77%) sepia(97%) saturate(1059%) hue-rotate(357deg) brightness(102%) contrast(104%);
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: brightness(1.2);
 }
 
 .differential-title {
